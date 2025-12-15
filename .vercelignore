@@ -1,16 +1,11 @@
 node_modules
 .git
-src
 .env
 .env.local
 .env.development
 .env.test
 .env.production
-.env.local
 .DS_Store
 *.log
 .vscode
 .idea
-README.md
-tsconfig.json
-webpack.config.js
