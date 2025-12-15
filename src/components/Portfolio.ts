@@ -282,42 +282,42 @@ export class Portfolio {
           description: 'A comprehensive inventory management system built with PHP for tracking and managing stock levels, orders, and suppliers.',
           technologies: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
           github: 'https://github.com/hesnoteyar/isms-inventory',
-          image: './ISMSInventory.png'
+          image: '/ISMSInventory.png'
         },
         {
           title: 'Messaging App',
           description: 'Real-time messaging application for Android devices with features like group chats, file sharing, and push notifications.',
           technologies: ['Java', 'Android SDK', 'Firebase', 'XML', 'SQLite'],
           github: 'https://github.com/hesnoteyar/messaging-app',
-          image: './MessagingApp.png'
+          image: '/MessagingApp.png'
         },
         {
           title: 'Foodify Web',
           description: 'Food delivery web application with restaurant management, order tracking, and payment integration.',
           technologies: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript', 'CSS3'],
           github: 'https://github.com/hesnoteyar/foodify-web',
-          image: './FoodifyWeb.png'
+          image: '/FoodifyWeb.png'
         },
         {
           title: 'Capstone Project',
           description: 'Final year project demonstrating full-stack development skills with modern web technologies.',
           technologies: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap', 'Chart.js'],
           github: 'https://github.com/hesnoteyar/capstone-project',
-          image: './Capstone.png'
+          image: '/Capstone.png'
         },
         {
           title: 'Employee Management System',
           description: 'HR management system for handling employee records, payroll, and performance tracking.',
           technologies: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
           github: 'https://github.com/hesnoteyar/employee-management',
-          image: './EmployeeManagement.png'
+          image: '/EmployeeManagement.png'
         },
         {
           title: 'Certificates Repository',
           description: 'Digital repository for storing and managing academic and professional certificates with verification system.',
           technologies: [],
           github: 'https://github.com/hesnoteyar/certificates-repo',
-          image: './Certificates.png'
+          image: '/Certificates.png'
         }
       ];
 
