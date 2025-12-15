@@ -1,5 +1,4 @@
 {
-  "version": 2,
   "builds": [
     {
       "src": "package.json",
@@ -11,18 +10,8 @@
   ],
   "routes": [
     {
-      "src": "/favicon.ico",
-      "dest": "/favicon.ico"
-    },
-    {
-      "src": "/.*\\.(png|jpg|jpeg|gif|svg|ico|css|js|pdf)",
-      "headers": {
-        "Cache-Control": "public, s-maxage=31536000, immutable"
-      }
-    },
-    {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/$1"
     }
   ]
 }
