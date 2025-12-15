@@ -1,11 +1,24 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "public": true,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
   "routes": [
     {
-      "handle": "filesystem"
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/.*\\.(png|jpg|jpeg|gif|svg|ico|css|js|pdf)",
+      "headers": {
+        "Cache-Control": "public, s-maxage=31536000, immutable"
+      }
     },
     {
       "src": "/(.*)",
