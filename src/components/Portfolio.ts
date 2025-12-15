@@ -281,42 +281,42 @@ export class Portfolio {
           title: 'ISMS Inventory Management System',
           description: 'A comprehensive inventory management system built with PHP for tracking and managing stock levels, orders, and suppliers.',
           technologies: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
-          github: 'https://github.com/hesnoteyar/isms-inventory',
+          github: 'https://github.com/hesnoteyar/ISMSInventoryManagementSystem_Backend.git',
           image: '/ISMSInventory.png'
         },
         {
           title: 'Messaging App',
           description: 'Real-time messaging application for Android devices with features like group chats, file sharing, and push notifications.',
           technologies: ['Java', 'Android SDK', 'Firebase', 'XML', 'SQLite'],
-          github: 'https://github.com/hesnoteyar/messaging-app',
+          github: 'https://github.com/hesnoteyar/messagingapp.git',
           image: '/MessagingApp.png'
         },
         {
           title: 'Foodify Web',
           description: 'Food delivery web application with restaurant management, order tracking, and payment integration.',
           technologies: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript', 'CSS3'],
-          github: 'https://github.com/hesnoteyar/foodify-web',
+          github: 'https://github.com/hesnoteyar/https---github.com-hesnoteyar-foodifyweb.git',
           image: '/FoodifyWeb.png'
         },
         {
           title: 'Capstone Project',
           description: 'Final year project demonstrating full-stack development skills with modern web technologies.',
           technologies: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap', 'Chart.js'],
-          github: 'https://github.com/hesnoteyar/capstone-project',
+          github: 'https://github.com/hesnoteyar/capstone',
           image: '/Capstone.png'
         },
         {
           title: 'Employee Management System',
           description: 'HR management system for handling employee records, payroll, and performance tracking.',
           technologies: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
-          github: 'https://github.com/hesnoteyar/employee-management',
+          github: 'https://github.com/alekzzz01/Hackathon_Property_Management_System',
           image: '/EmployeeManagement.png'
         },
         {
           title: 'Certificates Repository',
           description: 'Digital repository for storing and managing academic and professional certificates with verification system.',
           technologies: [],
-          github: 'https://github.com/hesnoteyar/certificates-repo',
+          github: 'https://github.com/hesnoteyar/certificates',
           image: '/Certificates.png'
         }
       ];
