@@ -1,9 +1,9 @@
-import { Project, Skill, PersonalInfo, Education } from './types';
+import { Project, Skill, PersonalInfo, Education, WorkExperience } from './types';
 
 export const personalInfo: PersonalInfo = {
   name: "hesnoteyar",
-  title: "Full Stack Developer",
-  bio: "Passionate developer with expertise in Android development, web technologies, and cloud infrastructure. Currently pursuing BS Information Technology while building innovative applications and systems.",
+  title: "Full Stack Developer & Founder",
+  bio: "Passionate developer and entrepreneur with expertise in Android development, web technologies, and cloud infrastructure. Founder & CEO of AxionByte, a technology startup focused on innovative software solutions. Currently pursuing BS Information Technology while building innovative applications and leading a growing tech company.",
   email: "hesnoteyar@example.com",
   linkedinUrl: "https://linkedin.com/in/hesnoteyar",
   githubUrl: "https://github.com/hesnoteyar",
@@ -54,6 +54,31 @@ export const education: Education[] = [
     startDate: "2015",
     endDate: "2019",
     description: "Completed comprehensive secondary education with strong performance in mathematics and science subjects."
+  }
+];
+
+export const workExperience: WorkExperience[] = [
+  {
+    id: "1",
+    company: "AxionByte",
+    position: "Founder & CEO",
+    startDate: "2025",
+    endDate: "Present",
+    current: true,
+    description: "Founded and leading AxionByte, a technology startup focused on innovative software solutions and digital transformation.",
+    responsibilities: [
+      "Strategic planning and business development",
+      "Leading technical architecture and development teams",
+      "Client relationship management and project oversight",
+      "Product development and market expansion",
+      "Building company culture and hiring top talent"
+    ],
+    achievements: [
+      "Successfully launched multiple client projects",
+      "Built a team of skilled developers and designers",
+      "Established partnerships with key technology vendors",
+      "Developed proprietary tools and frameworks"
+    ]
   }
 ];
 

@@ -26,6 +26,18 @@ export interface Education {
   description?: string;
 }
 
+export interface WorkExperience {
+  id: string;
+  company: string;
+  position: string;
+  startDate: string;
+  endDate: string;
+  current: boolean;
+  description: string;
+  responsibilities: string[];
+  achievements?: string[];
+}
+
 export interface PersonalInfo {
   name: string;
   title: string;

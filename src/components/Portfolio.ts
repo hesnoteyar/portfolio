@@ -1,5 +1,5 @@
-import { personalInfo, skills, projects, education } from '../types/data';
-import { Project, Skill, Education } from '../types/types';
+import { personalInfo, skills, projects, education, workExperience } from '../types/data';
+import { Project, Skill, Education, WorkExperience } from '../types/types';
 
 export class Portfolio {
   private typingIndex = 0;
@@ -20,7 +20,7 @@ export class Portfolio {
     this.renderHero();
     this.renderAbout();
     this.renderTechStack();
-    this.renderEducation();
+    this.renderExperience();
     this.renderProjects();
     this.renderContact();
     this.setupNavigation();
@@ -194,52 +194,83 @@ export class Portfolio {
     }
   }
 
-  private renderEducation(): void {
-    const timelineEl = document.querySelector('.timeline');
+  private renderExperience(): void {
+    // Use a more specific selector to ensure we're targeting the right element
+    const timelineEl = document.querySelector('#experience .timeline');
     if (timelineEl) {
-      const educationData = [
+      const experienceData = [
         {
-          degree: 'BS Information Technology Major in Cybersecurity',
-          institution: 'University of Makati',
+          company: 'AxionByte',
+          position: 'Founder & CEO',
+          period: '2025-Present',
+          status: 'Current',
+          description: 'Founded and leading AxionByte, a technology startup focused on innovative software solutions and digital transformation. Building a team of skilled developers and establishing partnerships with key technology vendors.'
+        },
+        {
+          company: 'University of Makati',
+          position: 'BS Information Technology Major in Cybersecurity',
           period: '2021-2025',
           status: 'Graduated',
           description: 'Graduated August 2025 with specialization in cybersecurity, focusing on network security, ethical hacking, and information systems protection.'
         },
         {
-          degree: 'Internship - QA & Full Stack Developer',
-          institution: 'Department of Trade and Industry',
+          company: 'Department of Trade and Industry',
+          position: 'Internship - QA & Full Stack Developer',
           period: '2024-2025',
           status: 'Completed',
           description: 'Gained practical experience in quality assurance testing and full-stack development, working on government digital transformation projects.'
         },
         {
-          degree: 'Senior High School ICT',
-          institution: 'University of Makati',
+          company: 'University of Makati',
+          position: 'Senior High School ICT',
           period: '2019-2021',
           status: 'Completed',
           description: 'Specialized in Information and Communications Technology track with focus on programming fundamentals and computer systems.'
         },
         {
-          degree: 'Junior High School',
-          institution: 'Fort Bonifacio Elementary School',
+          company: 'Fort Bonifacio Elementary School',
+          position: 'Junior High School',
           period: '2015-2019',
           status: 'Completed',
           description: 'General education with early exposure to computer science and technology fundamentals.'
         }
       ];
 
-      timelineEl.innerHTML = educationData.map((edu, index) => `
+      timelineEl.innerHTML = experienceData.map((exp, index) => `
         <div class="timeline-item">
           <div class="timeline-content">
-            <span class="timeline-date">${edu.period}</span>
-            <h3>${edu.degree}</h3>
-            <h4>${edu.institution}</h4>
-            <p>${edu.description}</p>
+            <span class="timeline-date">${exp.period}</span>
+            <h3>${exp.position}</h3>
+            <h4>${exp.company}</h4>
+            <p>${exp.description}</p>
           </div>
           <div class="timeline-dot"></div>
         </div>
       `).join('');
     }
+  }
+
+  private getTechLogo(tech: string): string {
+    const techLogos: { [key: string]: string } = {
+      'JavaScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
+      'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
+      'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+      'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
+      'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
+      'PHP': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg',
+      'Java': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg',
+      'MySQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg',
+      'HTML': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
+      'CSS': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',
+      'CSS3': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',
+      'Bootstrap': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg',
+      'Firebase': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg',
+      'Android SDK': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg',
+      'SQLite': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg',
+      'XML': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xml/xml-original.svg',
+      'Chart.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg'
+    };
+    return techLogos[tech] || '';
   }
 
   private renderProjects(): void {
@@ -249,44 +280,44 @@ export class Portfolio {
         {
           title: 'ISMS Inventory Management System',
           description: 'A comprehensive inventory management system built with PHP for tracking and managing stock levels, orders, and suppliers.',
-          technologies: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap'],
-          github: '#',
-          image: 'https://via.placeholder.com/400x200/8b5cf6/ffffff?text=ISMS+Inventory'
+          technologies: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
+          github: 'https://github.com/hesnoteyar/isms-inventory',
+          image: './ISMSInventory.png'
         },
         {
           title: 'Messaging App',
           description: 'Real-time messaging application for Android devices with features like group chats, file sharing, and push notifications.',
-          technologies: ['Java', 'Android', 'Firebase', 'SQLite'],
-          github: '#',
-          image: 'https://via.placeholder.com/400x200/8b5cf6/ffffff?text=Messaging+App'
+          technologies: ['Java', 'Android SDK', 'Firebase', 'XML', 'SQLite'],
+          github: 'https://github.com/hesnoteyar/messaging-app',
+          image: './MessagingApp.png'
         },
         {
           title: 'Foodify Web',
           description: 'Food delivery web application with restaurant management, order tracking, and payment integration.',
-          technologies: ['PHP', 'Laravel', 'MySQL', 'JavaScript'],
-          github: '#',
-          image: 'https://via.placeholder.com/400x200/8b5cf6/ffffff?text=Foodify+Web'
+          technologies: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript', 'CSS3'],
+          github: 'https://github.com/hesnoteyar/foodify-web',
+          image: './FoodifyWeb.png'
         },
         {
           title: 'Capstone Project',
           description: 'Final year project demonstrating full-stack development skills with modern web technologies.',
-          technologies: ['PHP', 'React', 'MySQL', 'API'],
-          github: '#',
-          image: 'https://via.placeholder.com/400x200/8b5cf6/ffffff?text=Capstone+Project'
+          technologies: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap', 'Chart.js'],
+          github: 'https://github.com/hesnoteyar/capstone-project',
+          image: './Capstone.png'
         },
         {
           title: 'Employee Management System',
           description: 'HR management system for handling employee records, payroll, and performance tracking.',
-          technologies: ['PHP', 'MySQL', 'JavaScript', 'Chart.js'],
-          github: '#',
-          image: 'https://via.placeholder.com/400x200/8b5cf6/ffffff?text=Employee+Management'
+          technologies: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
+          github: 'https://github.com/hesnoteyar/employee-management',
+          image: './EmployeeManagement.png'
         },
         {
           title: 'Certificates Repository',
           description: 'Digital repository for storing and managing academic and professional certificates with verification system.',
-          technologies: ['PHP', 'MySQL', 'PDF.js', 'Bootstrap'],
-          github: '#',
-          image: 'https://via.placeholder.com/400x200/8b5cf6/ffffff?text=Certificates+Repo'
+          technologies: [],
+          github: 'https://github.com/hesnoteyar/certificates-repo',
+          image: './Certificates.png'
         }
       ];
 
@@ -299,7 +330,12 @@ export class Portfolio {
             <h3>${project.title}</h3>
             <p>${project.description}</p>
             <div class="project-tech">
-              ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+              ${project.technologies.map(tech => {
+                const logoUrl = this.getTechLogo(tech);
+                return logoUrl 
+                  ? `<span class="tech-item"><img src="${logoUrl}" class="tech-logo" alt="${tech}"><span class="tech-name">${tech}</span></span>`
+                  : `<span class="tech-tag">${tech}</span>`;
+              }).join('')}
             </div>
             <div class="project-links">
               <a href="${project.github}" class="project-link" target="_blank">GitHub</a>
