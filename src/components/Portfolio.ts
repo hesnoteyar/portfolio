@@ -1,6 +1,15 @@
 import { personalInfo, skills, projects, education, workExperience } from '../types/data';
 import { Project, Skill, Education, WorkExperience } from '../types/types';
 
+// Import assets
+import ISMSInventoryImg from '../assets/ISMSInventory.png';
+import MessagingAppImg from '../assets/MessagingApp.png';
+import FoodifyWebImg from '../assets/FoodifyWeb.png';
+import CapstoneImg from '../assets/Capstone.png';
+import EmployeeManagementImg from '../assets/EmployeeManagement.png';
+import CertificatesImg from '../assets/Certificates.png';
+import CVPdf from '../assets/CV_Saranza.pdf';
+
 export class Portfolio {
   private typingIndex = 0;
   private charIndex = 0;
@@ -11,6 +20,16 @@ export class Portfolio {
     "Web Developer",
     "Cybersecurity Enthusiast"
   ];
+
+  // Image mapping
+  private imageMap: { [key: string]: string } = {
+    './ISMSInventory.png': ISMSInventoryImg,
+    './MessagingApp.png': MessagingAppImg,
+    './FoodifyWeb.png': FoodifyWebImg,
+    './Capstone.png': CapstoneImg,
+    './EmployeeManagement.png': EmployeeManagementImg,
+    './Certificates.png': CertificatesImg
+  };
 
   constructor() {
     this.init();
@@ -26,6 +45,7 @@ export class Portfolio {
     this.setupNavigation();
     this.setupScrollAnimations();
     this.startTypingAnimation();
+    this.updateCVLinks();
   }
 
   private startTypingAnimation(): void {
@@ -324,7 +344,7 @@ export class Portfolio {
       projectsGridEl.innerHTML = projectsData.map(project => `
         <div class="project-card">
           <div class="project-image">
-            <img src="${project.image}" alt="${project.title}" loading="lazy">
+            <img src="${this.imageMap[project.image] || project.image}" alt="${project.title}" loading="lazy">
           </div>
           <div class="project-content">
             <h3>${project.title}</h3>
@@ -392,7 +412,7 @@ export class Portfolio {
           </div>
         </div>
         <div class="contact-cta">
-          <a href="./CV_Saranza.pdf" class="cta-button" download="CV_Saranza.pdf">
+          <a href="${CVPdf}" class="cta-button" download="CV_Saranza.pdf">
             <i class="fas fa-download" style="margin-right: 0.5rem;"></i>
             Download My Resume
           </a>
@@ -482,6 +502,14 @@ export class Portfolio {
       if (link.getAttribute('data-section') === current) {
         link.classList.add('active');
       }
+    });
+  }
+
+  private updateCVLinks(): void {
+    // Update CV download links in the static HTML
+    const cvLinks = document.querySelectorAll('a[href="./CV_Saranza.pdf"]');
+    cvLinks.forEach(link => {
+      (link as HTMLAnchorElement).href = CVPdf;
     });
   }
 }
